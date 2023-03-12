@@ -2,6 +2,12 @@ body {
 	font-family: sans-serif;
 }
 
+.container {
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
 .accordion {
 	color: blue;
 }
@@ -11,12 +17,13 @@ body {
 }
 
 .accordion-title {
+	position: relative;
 	display: block;
 	padding: 10px;
 	z-index: 110;
 
 	background-color: #eee;
-	font-size: 1.5rem;
+	font-size: 2rem;
 
 	cursor: pointer;
 
@@ -44,7 +51,7 @@ body {
 }
 
 .accordion-content img {
-	max-width: 300px;
+	max-width: 700px;
 }
 
 .accordion-item:has(input[type='radio']:checked) .accordion-content {
@@ -63,6 +70,7 @@ body {
 
 .plus {
 	position: absolute;
+	z-index: 200;
 	top: 15px;
 	right: 10px;
 
@@ -81,4 +89,41 @@ body {
 
 .accordion-heading:has(input[type='radio']:checked, :hover) .plus {
 	transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1440px) {
+	.accordion-title {
+		font-size: 1.5rem;
+	}
+
+	.accordion-content img {
+		max-width: 300px;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	.container {
+		max-width: revert;
+	}
+	.accordion-title {
+		font-size: 1.2rem;
+	}
+
+	.plus {
+		top: 13px;
+	}
+
+	.accordion-content img {
+		max-width: 250px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.accordion-title {
+		font-size: 1rem;
+	}
+
+	.accordion-content img {
+		max-width: 250px;
+	}
 }
