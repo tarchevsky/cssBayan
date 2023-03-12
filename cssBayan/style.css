@@ -16,6 +16,7 @@ body {
 	z-index: 110;
 
 	background-color: #eee;
+	font-size: 1.5rem;
 
 	cursor: pointer;
 
@@ -35,10 +36,15 @@ body {
 	padding: 10px;
 	height: 0;
 	margin-top: -20px;
+	text-align: center;
 
 	opacity: 0;
 
 	transition: all 0.4s linear;
+}
+
+.accordion-content img {
+	max-width: 300px;
 }
 
 .accordion-item:has(input[type='radio']:checked) .accordion-content {
@@ -57,7 +63,7 @@ body {
 
 .plus {
 	position: absolute;
-	top: 10px;
+	top: 15px;
 	right: 10px;
 
 	opacity: 0;
