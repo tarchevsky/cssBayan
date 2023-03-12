@@ -1,0 +1,78 @@
+body {
+	font-family: sans-serif;
+}
+
+.accordion {
+	color: blue;
+}
+
+.accordion:hover {
+	color: #000;
+}
+
+.accordion-title {
+	display: block;
+	padding: 10px;
+	z-index: 110;
+
+	background-color: #eee;
+
+	cursor: pointer;
+
+	transition: color 0.3s ease-out;
+}
+
+.accordion-title:active {
+	color: red;
+}
+
+.accordion-heading {
+	position: relative;
+}
+
+.accordion-content {
+	z-index: -1;
+	padding: 10px;
+	height: 0;
+	margin-top: -20px;
+
+	opacity: 0;
+
+	transition: all 0.4s linear;
+}
+
+.accordion-item:has(input[type='radio']:checked) .accordion-content {
+	height: 100%;
+	margin-top: 0;
+
+	opacity: 1;
+}
+
+.accordion-item:has(input[type='radio']:hover) .accordion-content {
+	margin-top: 0;
+	height: 100%;
+
+	opacity: 1;
+}
+
+.plus {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+
+	opacity: 0;
+
+	transition: all 0.3s ease-out;
+}
+
+.accordion:hover .plus {
+	opacity: 1;
+}
+
+.accordion-heading:active .accordion-title + .plus {
+	color: red;
+}
+
+.accordion-heading:has(input[type='radio']:checked, :hover) .plus {
+	transform: rotate(45deg);
+}
